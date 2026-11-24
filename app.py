@@ -14,7 +14,7 @@ class Handler(BaseHTTPRequestHandler):
         elif self.path == "/api/summary":
             body = json.dumps({"total_cents": order_total_cents([199, 299])}).encode("utf-8")
             media = "application/json"
-        elif self.path == "/":
+        elif self.path.split("?", 1)[0] == "/":
             total = order_total_cents([199, 299])
             body = (f'<!doctype html><html lang="zh-CN"><meta charset="utf-8">'
                     f'<title>订单合计测试</title><style>body{{font:16px sans-serif;margin:60px;color:#172033}}'
