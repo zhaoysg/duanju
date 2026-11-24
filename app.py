@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 
 def order_total_cents(items):
-    return sum(items) // 100
+    return sum(items)
 
 
 class Handler(BaseHTTPRequestHandler):
